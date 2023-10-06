@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="/static/venues.css" />
+</head>
+<body>
+    <a name="top"></a>
+    <div class="menu">
+        <ul>
+            <li class="w3-bar-item w3-button"><a href="/homepage"> Home </a></li>
+            <li class="w3-bar-item w3-button"><a href="/venue">Add Skill</a></li>
+            <li class="w3-bar-item w3-button"><a href="/help">Help</a></li>
+            <li class="w3-bar-item w3-button"><a href="/logout">Log out</a></li>
+        </ul>
+    </div>
+    <div>
+        <image src="/static/images/Skill-sets.jpg"></image>
+    </div>
+    <div class = "HEAD">
+        <h1> Stuff Skills </h1>
+    </div>
+    <div class="venue-list">
+        {% for line in venues %}
+        <div class="venue">
+            <div class="venue-image">
+                <image src="/static/images/{{ line['Image'] }}" />
+            </div>           
+            <div class="venue-text">
+                <div class="venue-name">
+                    <a href="{{ url_for('show_detail', venue=line['Name'])}}">{{ line["Name"] }}</a>
+                </div>
+                <div class="venue-location">{{ line["Location"] }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <br></br>
+    </div>
+    <center>
+    <div class="menu">
+        <ul>
+            <p>Follow Us:</p>
+            <li class="w3-bar-item w3-button"><a href="https://www.facebook.com/nus.singapore/">Facebook</a></li>
+            <li class="w3-bar-item w3-button"><a href="https://www.instagram.com/nus_singapore/">Instagram</a></li>
+        </ul>	
+    </div>
+    </center>
+
+    <div>
+        <br></br>
+    </div>
+
+    <div class = "BTT">
+            <a href="#top">Back to top</a>
+    </div>
+    <p>Made by yitong© 2022</p>
+
+    <script src='{{ url_for("static", filename="home.js") }}'></script>
+</body>
+</html>
+

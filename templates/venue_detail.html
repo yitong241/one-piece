@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="/static/venues.css" />
+</head>
+<body>
+    
+    <div class="menu">
+        <ul>
+            <li class="w3-bar-item w3-button"><a href="/homepage"> Home </a></li>
+            <li class="w3-bar-item w3-button"><a href="/venue">Add Skill</a></li>
+            <li class="w3-bar-item w3-button"><a href="/help">Help</a></li>
+            <li class="w3-bar-item w3-button"><a href="/logout">Log out</a></li>
+        </ul>
+    </div>
+
+
+    <div class="detail_image">
+        <image src="/static/images/{{ data['image'] }}" />
+    </div>           
+    <div class="detail-name"> {{ data["name"] }}    </div>
+    <div class="detail-name"> Owner of the skill: {{ data["stuff"] }}    </div>
+    <div class="detail-location">{{ data["Location"] }}</div>
+    <div class="detail-description">{{ data["Description"] }}</div>
+    <br>
+    <br>    
+
+    <div class="update_detail">
+        <a href="{{ url_for('edit_venue', venue=data['Name'])}}"> Update Details of {{ data["Name"]}} </a>
+    </div>
+    <p>Made by yitong© 2022</p>
+
+
+
+</body>
+</html>
